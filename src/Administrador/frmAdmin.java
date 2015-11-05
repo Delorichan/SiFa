@@ -73,7 +73,7 @@ public class frmAdmin extends javax.swing.JFrame {
         );
 
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1444000003_printer.png"))); // NOI18N
-        jMenu1.setText("Archivo");
+        jMenu1.setText("Administración");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1443999664_unknown.png"))); // NOI18N
