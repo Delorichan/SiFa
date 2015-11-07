@@ -44,19 +44,20 @@ public class frmAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         escritorio = new javax.swing.JDesktopPane();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem8 = new javax.swing.JMenuItem();
+        menuPrincipal = new javax.swing.JMenuBar();
+        menuAdministracion = new javax.swing.JMenu();
+        opcionEmpleado = new javax.swing.JMenuItem();
+        opcionCliente = new javax.swing.JMenuItem();
+        opcionProveedor = new javax.swing.JMenuItem();
+        opcionReportes = new javax.swing.JMenuItem();
+        opcionRespaldo = new javax.swing.JMenuItem();
+        separador = new javax.swing.JPopupMenu.Separator();
+        opcionSalir = new javax.swing.JMenuItem();
+        menuProductos = new javax.swing.JMenu();
+        opcionControlProductos = new javax.swing.JMenuItem();
+        opcionCategorias = new javax.swing.JMenuItem();
+        menuAyuda = new javax.swing.JMenu();
+        opcionAyudaRemota = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Administrador SiFa");
@@ -72,103 +73,112 @@ public class frmAdmin extends javax.swing.JFrame {
             .addGap(0, 517, Short.MAX_VALUE)
         );
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1444000003_printer.png"))); // NOI18N
-        jMenu1.setText("Administración");
+        menuAdministracion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1444000003_printer.png"))); // NOI18N
+        menuAdministracion.setText("Administración");
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1443999664_unknown.png"))); // NOI18N
-        jMenuItem1.setText("Empleado");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        opcionEmpleado.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        opcionEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1443999664_unknown.png"))); // NOI18N
+        opcionEmpleado.setText("Empleado");
+        opcionEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                opcionEmpleadoActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        menuAdministracion.add(opcionEmpleado);
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1443999695_matureman1.png"))); // NOI18N
-        jMenuItem2.setText("Cliente");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        opcionCliente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        opcionCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1443999695_matureman1.png"))); // NOI18N
+        opcionCliente.setText("Cliente");
+        opcionCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                opcionClienteActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        menuAdministracion.add(opcionCliente);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1443999723_malecostume.png"))); // NOI18N
-        jMenuItem3.setText("Proveedor");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        opcionProveedor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        opcionProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1443999723_malecostume.png"))); // NOI18N
+        opcionProveedor.setText("Proveedor");
+        opcionProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                opcionProveedorActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
+        menuAdministracion.add(opcionProveedor);
 
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1443999850_Report.png"))); // NOI18N
-        jMenuItem4.setText("Reportes");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        opcionReportes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        opcionReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1443999850_Report.png"))); // NOI18N
+        opcionReportes.setText("Reportes");
+        opcionReportes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                opcionReportesActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem4);
-        jMenu1.add(jSeparator1);
+        menuAdministracion.add(opcionReportes);
 
-        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1443999924_Close.png"))); // NOI18N
-        jMenuItem5.setText("Salir");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+        opcionRespaldo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
+        opcionRespaldo.setText("Respaldo");
+        opcionRespaldo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
+                opcionRespaldoActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem5);
+        menuAdministracion.add(opcionRespaldo);
+        menuAdministracion.add(separador);
 
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1443999965_box.png"))); // NOI18N
-        jMenu2.setText("Productos");
-
-        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1444000091_bill.png"))); // NOI18N
-        jMenuItem6.setText("Control Productos");
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+        opcionSalir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        opcionSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1443999924_Close.png"))); // NOI18N
+        opcionSalir.setText("Salir");
+        opcionSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
+                opcionSalirActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem6);
+        menuAdministracion.add(opcionSalir);
 
-        jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1444000134_categories.png"))); // NOI18N
-        jMenuItem7.setText("Categorias");
-        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+        menuPrincipal.add(menuAdministracion);
+
+        menuProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1443999965_box.png"))); // NOI18N
+        menuProductos.setText("Productos");
+
+        opcionControlProductos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
+        opcionControlProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1444000091_bill.png"))); // NOI18N
+        opcionControlProductos.setText("Control Productos");
+        opcionControlProductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem7ActionPerformed(evt);
+                opcionControlProductosActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem7);
+        menuProductos.add(opcionControlProductos);
 
-        jMenuBar1.add(jMenu2);
-
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1444000039_info.png"))); // NOI18N
-        jMenu3.setText("Ayuda");
-
-        jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1443999741_supportmale.png"))); // NOI18N
-        jMenuItem8.setText("Ayuda Remota");
-        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+        opcionCategorias.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
+        opcionCategorias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1444000134_categories.png"))); // NOI18N
+        opcionCategorias.setText("Categorias");
+        opcionCategorias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem8ActionPerformed(evt);
+                opcionCategoriasActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem8);
+        menuProductos.add(opcionCategorias);
 
-        jMenuBar1.add(jMenu3);
+        menuPrincipal.add(menuProductos);
 
-        setJMenuBar(jMenuBar1);
+        menuAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1444000039_info.png"))); // NOI18N
+        menuAyuda.setText("Ayuda");
+
+        opcionAyudaRemota.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
+        opcionAyudaRemota.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1443999741_supportmale.png"))); // NOI18N
+        opcionAyudaRemota.setText("Ayuda Remota");
+        opcionAyudaRemota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcionAyudaRemotaActionPerformed(evt);
+            }
+        });
+        menuAyuda.add(opcionAyudaRemota);
+
+        menuPrincipal.add(menuAyuda);
+
+        setJMenuBar(menuPrincipal);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -184,19 +194,19 @@ public class frmAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+    private void opcionSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionSalirActionPerformed
         // TODO add your handling code here:
         System.exit(0);
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+    }//GEN-LAST:event_opcionSalirActionPerformed
 
-    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+    private void opcionAyudaRemotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionAyudaRemotaActionPerformed
         // TODO add your handling code here:
         getToolkit().beep();
         JOptionPane.showMessageDialog(rootPane, "Cominicate con nosotros:"+"\n"+
                 "22-91-16-46-13","Ayuda Remota",JOptionPane.WARNING_MESSAGE);
-    }//GEN-LAST:event_jMenuItem8ActionPerformed
+    }//GEN-LAST:event_opcionAyudaRemotaActionPerformed
 
-    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+    private void opcionCategoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionCategoriasActionPerformed
         // TODO add your handling code here:
         frmCategorias a = new frmCategorias();
         int y = (escritorio.getHeight()/2)-a.getHeight()/2;
@@ -210,9 +220,9 @@ public class frmAdmin extends javax.swing.JFrame {
             getToolkit().beep();
             JOptionPane.showMessageDialog(rootPane, "La ventana esta en uso","Erro de Ventana",JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_jMenuItem7ActionPerformed
+    }//GEN-LAST:event_opcionCategoriasActionPerformed
 
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+    private void opcionControlProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionControlProductosActionPerformed
         // TODO add your handling code here:
         frmControlProductos a = new frmControlProductos();
         int y = (escritorio.getHeight()/2)-a.getHeight()/2;
@@ -226,9 +236,9 @@ public class frmAdmin extends javax.swing.JFrame {
             getToolkit().beep();
             JOptionPane.showMessageDialog(rootPane, "La ventana esta en uso","Erro de Ventana",JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
+    }//GEN-LAST:event_opcionControlProductosActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void opcionEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionEmpleadoActionPerformed
         // TODO add your handling code here:
         frmEmpleado a = new frmEmpleado();
         int y = (escritorio.getHeight()/2)-a.getHeight()/2;
@@ -242,9 +252,9 @@ public class frmAdmin extends javax.swing.JFrame {
             getToolkit().beep();
             JOptionPane.showMessageDialog(rootPane, "La ventana esta en uso","Erro de Ventana",JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_opcionEmpleadoActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void opcionClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionClienteActionPerformed
         // TODO add your handling code here:
         frmCliente a = new frmCliente();
         int y = (escritorio.getHeight()/2)-a.getHeight()/2;
@@ -258,9 +268,9 @@ public class frmAdmin extends javax.swing.JFrame {
             getToolkit().beep();
             JOptionPane.showMessageDialog(rootPane, "La ventana esta en uso","Erro de Ventana",JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_opcionClienteActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void opcionProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionProveedorActionPerformed
         // TODO add your handling code here:
         frmProveedor a = new frmProveedor();
         int y = (escritorio.getHeight()/2)-a.getHeight()/2;
@@ -274,9 +284,9 @@ public class frmAdmin extends javax.swing.JFrame {
             getToolkit().beep();
             JOptionPane.showMessageDialog(rootPane, "La ventana esta en uso","Erro de Ventana",JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_opcionProveedorActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void opcionReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionReportesActionPerformed
         // TODO add your handling code here:
         frmReportes a = new frmReportes();
         int y = (escritorio.getHeight()/2)-a.getHeight()/2;
@@ -290,7 +300,11 @@ public class frmAdmin extends javax.swing.JFrame {
             getToolkit().beep();
             JOptionPane.showMessageDialog(rootPane, "La ventana esta en uso","Erro de Ventana",JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_opcionReportesActionPerformed
+
+    private void opcionRespaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionRespaldoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_opcionRespaldoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -329,18 +343,19 @@ public class frmAdmin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane escritorio;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JMenu menuAdministracion;
+    private javax.swing.JMenu menuAyuda;
+    private javax.swing.JMenuBar menuPrincipal;
+    private javax.swing.JMenu menuProductos;
+    private javax.swing.JMenuItem opcionAyudaRemota;
+    private javax.swing.JMenuItem opcionCategorias;
+    private javax.swing.JMenuItem opcionCliente;
+    private javax.swing.JMenuItem opcionControlProductos;
+    private javax.swing.JMenuItem opcionEmpleado;
+    private javax.swing.JMenuItem opcionProveedor;
+    private javax.swing.JMenuItem opcionReportes;
+    private javax.swing.JMenuItem opcionRespaldo;
+    private javax.swing.JMenuItem opcionSalir;
+    private javax.swing.JPopupMenu.Separator separador;
     // End of variables declaration//GEN-END:variables
 }
