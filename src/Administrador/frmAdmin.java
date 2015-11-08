@@ -33,6 +33,7 @@ public class frmAdmin extends javax.swing.JFrame {
     public static boolean cliente=false;
     public static boolean proveedor=false;
     public static boolean reportes=false;
+    public static boolean respaldo=false;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -304,6 +305,18 @@ public class frmAdmin extends javax.swing.JFrame {
 
     private void opcionRespaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionRespaldoActionPerformed
         // TODO add your handling code here:
+        frmRespaldo a = new frmRespaldo();
+        int y = (escritorio.getHeight()/2)-a.getHeight()/2;
+        int x = (escritorio.getWidth()/2)-a.getWidth()/2;
+        if(respaldo==false){
+            escritorio.add(a);
+            a.setLocation(x, y);
+            a.show();
+            respaldo=true;
+        }else{
+            getToolkit().beep();
+            JOptionPane.showMessageDialog(rootPane, "La ventana esta en uso","Erro de Ventana",JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_opcionRespaldoActionPerformed
 
     /**
