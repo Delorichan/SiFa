@@ -99,7 +99,7 @@ public class frmEmpleado extends javax.swing.JInternalFrame {
         jLabel6.setText("Telefono :");
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel7.setText("Telefono :");
+        jLabel7.setText("Contraseña:");
 
         jCheckBox1.setBackground(new java.awt.Color(213, 255, 189));
         jCheckBox1.setText("Mostrar");

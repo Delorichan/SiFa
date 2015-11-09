@@ -34,6 +34,7 @@ public class frmAdmin extends javax.swing.JFrame {
     public static boolean proveedor=false;
     public static boolean reportes=false;
     public static boolean respaldo=false;
+    public static boolean listaEmpleado=false;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -241,14 +242,14 @@ public class frmAdmin extends javax.swing.JFrame {
 
     private void opcionEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionEmpleadoActionPerformed
         // TODO add your handling code here:
-        frmEmpleado a = new frmEmpleado();
+        frmListaEmpleado a = new frmListaEmpleado();
         int y = (escritorio.getHeight()/2)-a.getHeight()/2;
         int x = (escritorio.getWidth()/2)-a.getWidth()/2;
-        if(empleado==false){
+        if(listaEmpleado==false){
             escritorio.add(a);
             a.setLocation(x, y);
             a.show();
-            empleado=true;
+            listaEmpleado=true;
         }else{
             getToolkit().beep();
             JOptionPane.showMessageDialog(rootPane, "La ventana esta en uso","Erro de Ventana",JOptionPane.WARNING_MESSAGE);
@@ -371,4 +372,18 @@ public class frmAdmin extends javax.swing.JFrame {
     private javax.swing.JMenuItem opcionSalir;
     private javax.swing.JPopupMenu.Separator separador;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the escritorio
+     */
+    public javax.swing.JDesktopPane getEscritorio() {
+        return escritorio;
+    }
+
+    /**
+     * @param escritorio the escritorio to set
+     */
+    public void setEscritorio(javax.swing.JDesktopPane escritorio) {
+        this.escritorio = escritorio;
+    }
 }
