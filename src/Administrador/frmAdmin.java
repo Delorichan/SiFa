@@ -58,6 +58,8 @@ public class frmAdmin extends javax.swing.JFrame {
         menuProductos = new javax.swing.JMenu();
         opcionControlProductos = new javax.swing.JMenuItem();
         opcionCategorias = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
         menuAyuda = new javax.swing.JMenu();
         opcionAyudaRemota = new javax.swing.JMenuItem();
 
@@ -164,6 +166,12 @@ public class frmAdmin extends javax.swing.JFrame {
         menuProductos.add(opcionCategorias);
 
         menuPrincipal.add(menuProductos);
+
+        jMenu2.setText("Ventas");
+        menuPrincipal.add(jMenu2);
+
+        jMenu1.setText("Configuración");
+        menuPrincipal.add(jMenu1);
 
         menuAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1444000039_info.png"))); // NOI18N
         menuAyuda.setText("Ayuda");
@@ -357,6 +365,8 @@ public class frmAdmin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane escritorio;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu menuAdministracion;
     private javax.swing.JMenu menuAyuda;
     private javax.swing.JMenuBar menuPrincipal;
