@@ -37,7 +37,7 @@ public class frmListaEmpleado extends javax.swing.JInternalFrame {
      * Creates new form frmCategorias
      */
     public frmListaEmpleado() {
-        modelTabla = new DefaultTableModel(null,getColumnas());
+        modelTabla = new DefaultTableModel(null, getColumnas());
         setFilas();
         initComponents();
     }
@@ -66,8 +66,26 @@ public class frmListaEmpleado extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
         setTitle("Lista empleados");
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Administrador/icono.png"))); // NOI18N
+        addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameClosing(evt);
+            }
+            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+            }
+        });
 
-        jPanel1.setBackground(new java.awt.Color(213, 255, 189));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1444001034_plus.png"))); // NOI18N
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -90,7 +108,7 @@ public class frmListaEmpleado extends javax.swing.JInternalFrame {
         tablaEmpleados.setModel(modelTabla);
         scrollTable.setViewportView(tablaEmpleados);
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         jLabel2.setText("Lista empleados");
 
         jLabel1.setText("id empleado");
@@ -143,7 +161,7 @@ public class frmListaEmpleado extends javax.swing.JInternalFrame {
                     .addComponent(btnBuscar)
                     .addComponent(btnModificar)
                     .addComponent(btnEliminar))
-                .addGap(0, 14, Short.MAX_VALUE))
+                .addGap(0, 12, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -172,17 +190,14 @@ public class frmListaEmpleado extends javax.swing.JInternalFrame {
             int confirmar = JOptionPane.showConfirmDialog(null,
                     "Esta seguro que desea Eliminar el registro? ");
             if (JOptionPane.OK_OPTION == confirmar) {
-                model.removeRow(a);
+                modelTabla.removeRow(a);
                 JOptionPane.showMessageDialog(null,
                         "Registro Eliminado");
             }
         }
-
-//        frmAdmin.listaEmpleado = false;
-//        this.dispose();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
-    
+
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         frmEmpleado a = new frmEmpleado();
         int y = (admon.getEscritorio().getHeight() / 2) - a.getHeight() / 2;
@@ -197,6 +212,12 @@ public class frmListaEmpleado extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(rootPane, "La ventana esta en uso", "Error de Ventana", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void formInternalFrameClosing(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameClosing
+        // TODO add your handling code here:
+        listaEmpleado = false;
+        this.dispose();
+    }//GEN-LAST:event_formInternalFrameClosing
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -214,7 +235,7 @@ public class frmListaEmpleado extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     private String[] getColumnas() {
-        String columna[] = new String[]{"No empleado", "Nombre", "Apellido","Telefono"};
+        String columna[] = new String[]{"No empleado", "Nombre", "Apellido", "Telefono"};
         return columna;
     }
 
@@ -223,12 +244,12 @@ public class frmListaEmpleado extends javax.swing.JInternalFrame {
             String sql = "select idEmpleado, nombre, a_paterno,telefono from empleado";
             PreparedStatement us = con.conectar().prepareStatement(sql);
             ResultSet res = us.executeQuery();
-            
+
             Object datos[] = new Object[4];
-            
+
             while (res.next()) {
                 for (int i = 0; i < 4; i++) {
-                    datos[i] = res.getObject(i+1);
+                    datos[i] = res.getObject(i + 1);
                 }
                 modelTabla.addRow(datos);
             }
@@ -236,13 +257,5 @@ public class frmListaEmpleado extends javax.swing.JInternalFrame {
         } catch (SQLException ex) {
         }
     }
-    
-    public void windowClosing(WindowEvent e) {
-      frmAdmin.listaEmpleado = false;
-      this.dispose();
-      System.exit(0);
-    }
 
-   
-     
 }

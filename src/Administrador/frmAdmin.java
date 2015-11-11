@@ -257,6 +257,8 @@ public class frmAdmin extends javax.swing.JFrame {
             escritorio.add(a);
             a.setLocation(x, y);
             a.show();
+            
+            //Permite que la ventana no se abra dos veces, se desactiva para las listas
             listaEmpleado=true;
         }else{
             getToolkit().beep();
