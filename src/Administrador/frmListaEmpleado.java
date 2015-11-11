@@ -8,6 +8,20 @@ package Administrador;
 import static Administrador.frmAdmin.empleado;
 import javax.swing.JOptionPane;
 import Administrador.frmAdmin;
+import static Administrador.frmAdmin.listaEmpleado;
+import Clases.ConexionMySQL;
+import java.sql.Connection;
+import javax.sql.rowset.CachedRowSet;
+import javax.swing.table.DefaultTableModel;
+import com.sun.rowset.CachedRowSetImpl;
+import java.awt.event.WindowEvent;
+import java.beans.Statement;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -16,10 +30,15 @@ import Administrador.frmAdmin;
 public class frmListaEmpleado extends javax.swing.JInternalFrame {
 
     frmAdmin admon = new frmAdmin();
+    DefaultTableModel modelTabla;
+    ConexionMySQL con = new ConexionMySQL();
+
     /**
      * Creates new form frmCategorias
      */
     public frmListaEmpleado() {
+        modelTabla = new DefaultTableModel(null,getColumnas());
+        setFilas();
         initComponents();
     }
 
@@ -38,12 +57,13 @@ public class frmListaEmpleado extends javax.swing.JInternalFrame {
         btnModificar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        scrollTable = new javax.swing.JScrollPane();
         tablaEmpleados = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
 
+        setClosable(true);
         setIconifiable(true);
         setTitle("Lista empleados");
 
@@ -67,18 +87,8 @@ public class frmListaEmpleado extends javax.swing.JInternalFrame {
             }
         });
 
-        tablaEmpleados.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(tablaEmpleados);
+        tablaEmpleados.setModel(modelTabla);
+        scrollTable.setViewportView(tablaEmpleados);
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setText("Lista empleados");
@@ -110,7 +120,7 @@ public class frmListaEmpleado extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(scrollTable, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -124,7 +134,7 @@ public class frmListaEmpleado extends javax.swing.JInternalFrame {
                     .addComponent(jLabel1)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(scrollTable, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -152,22 +162,39 @@ public class frmListaEmpleado extends javax.swing.JInternalFrame {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here
-        frmAdmin.categoria=false;
-        this.dispose();
+        //Falta que elimine tambien la fila de la base de datos
+        DefaultTableModel model = (DefaultTableModel) tablaEmpleados.getModel();
+        int a = tablaEmpleados.getSelectedRow();
+        if (a < 0) {
+            JOptionPane.showMessageDialog(null,
+                    "Debe seleccionar una fila de la tabla");
+        } else {
+            int confirmar = JOptionPane.showConfirmDialog(null,
+                    "Esta seguro que desea Eliminar el registro? ");
+            if (JOptionPane.OK_OPTION == confirmar) {
+                model.removeRow(a);
+                JOptionPane.showMessageDialog(null,
+                        "Registro Eliminado");
+            }
+        }
+
+//        frmAdmin.listaEmpleado = false;
+//        this.dispose();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
+    
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         frmEmpleado a = new frmEmpleado();
-        int y = (admon.getEscritorio().getHeight()/2)-a.getHeight()/2;
-        int x = (admon.getEscritorio().getWidth()/2)-a.getWidth()/2;
-        if(empleado==false){
+        int y = (admon.getEscritorio().getHeight() / 2) - a.getHeight() / 2;
+        int x = (admon.getEscritorio().getWidth() / 2) - a.getWidth() / 2;
+        if (empleado == false) {
             admon.getEscritorio().add(a);
             a.setLocation(x, y);
             a.show();
-            empleado=true;
-        }else{
+            empleado = true;
+        } else {
             getToolkit().beep();
-            JOptionPane.showMessageDialog(rootPane, "La ventana esta en uso","Erro de Ventana",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "La ventana esta en uso", "Error de Ventana", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnAgregarActionPerformed
 
@@ -180,9 +207,42 @@ public class frmListaEmpleado extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JScrollPane scrollTable;
     private javax.swing.JTable tablaEmpleados;
     // End of variables declaration//GEN-END:variables
+
+    private String[] getColumnas() {
+        String columna[] = new String[]{"No empleado", "Nombre", "Apellido","Telefono"};
+        return columna;
+    }
+
+    private void setFilas() {
+        try {
+            String sql = "select idEmpleado, nombre, a_paterno,telefono from empleado";
+            PreparedStatement us = con.conectar().prepareStatement(sql);
+            ResultSet res = us.executeQuery();
+            
+            Object datos[] = new Object[4];
+            
+            while (res.next()) {
+                for (int i = 0; i < 4; i++) {
+                    datos[i] = res.getObject(i+1);
+                }
+                modelTabla.addRow(datos);
+            }
+            res.close();
+        } catch (SQLException ex) {
+        }
+    }
+    
+    public void windowClosing(WindowEvent e) {
+      frmAdmin.listaEmpleado = false;
+      this.dispose();
+      System.exit(0);
+    }
+
+   
+     
 }
