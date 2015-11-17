@@ -77,7 +77,7 @@ public class frmAdmin extends javax.swing.JFrame {
             .addGap(0, 517, Short.MAX_VALUE)
         );
 
-        menuAdministracion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1444000003_printer.png"))); // NOI18N
+        menuAdministracion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Home.png"))); // NOI18N
         menuAdministracion.setText("Administración");
 
         opcionEmpleado.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
@@ -111,7 +111,7 @@ public class frmAdmin extends javax.swing.JFrame {
         menuAdministracion.add(opcionProveedor);
 
         opcionReportes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
-        opcionReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1443999850_Report.png"))); // NOI18N
+        opcionReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Report.png"))); // NOI18N
         opcionReportes.setText("Reportes");
         opcionReportes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,6 +121,7 @@ public class frmAdmin extends javax.swing.JFrame {
         menuAdministracion.add(opcionReportes);
 
         opcionRespaldo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
+        opcionRespaldo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Upload.png"))); // NOI18N
         opcionRespaldo.setText("Respaldo");
         opcionRespaldo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,7 +132,7 @@ public class frmAdmin extends javax.swing.JFrame {
         menuAdministracion.add(separador);
 
         opcionSalir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        opcionSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1443999924_Close.png"))); // NOI18N
+        opcionSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Turn off.png"))); // NOI18N
         opcionSalir.setText("Salir");
         opcionSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,13 +168,15 @@ public class frmAdmin extends javax.swing.JFrame {
 
         menuPrincipal.add(menuProductos);
 
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Shopping cart.png"))); // NOI18N
         jMenu2.setText("Ventas");
         menuPrincipal.add(jMenu2);
 
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Application.png"))); // NOI18N
         jMenu1.setText("Configuración");
         menuPrincipal.add(jMenu1);
 
-        menuAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1444000039_info.png"))); // NOI18N
+        menuAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Help book.png"))); // NOI18N
         menuAyuda.setText("Ayuda");
 
         opcionAyudaRemota.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));

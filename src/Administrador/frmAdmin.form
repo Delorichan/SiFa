@@ -7,7 +7,7 @@
         <Menu class="javax.swing.JMenu" name="menuAdministracion">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/1444000003_printer.png"/>
+              <Image iconType="3" name="/Imagenes/Home.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Administraci&#xf3;n"/>
           </Properties>
@@ -60,7 +60,7 @@
                   <KeyStroke key="Ctrl+R"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Imagenes/1443999850_Report.png"/>
+                  <Image iconType="3" name="/Imagenes/Report.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Reportes"/>
               </Properties>
@@ -72,6 +72,9 @@
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="Ctrl+B"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/Upload.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Respaldo"/>
               </Properties>
@@ -87,7 +90,7 @@
                   <KeyStroke key="Ctrl+S"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Imagenes/1443999924_Close.png"/>
+                  <Image iconType="3" name="/Imagenes/Turn off.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Salir"/>
               </Properties>
@@ -137,18 +140,24 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu2">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Imagenes/Shopping cart.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Ventas"/>
           </Properties>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu1">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Imagenes/Application.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Configuraci&#xf3;n"/>
           </Properties>
         </Menu>
         <Menu class="javax.swing.JMenu" name="menuAyuda">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/1444000039_info.png"/>
+              <Image iconType="3" name="/Imagenes/Help book.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Ayuda"/>
           </Properties>
