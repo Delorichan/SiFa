@@ -179,9 +179,6 @@ public class frmListaEmpleado extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        // TODO add your handling code here
-        //Falta que elimine tambien la fila de la base de datos
-        DefaultTableModel model = (DefaultTableModel) tablaEmpleados.getModel();
         int a = tablaEmpleados.getSelectedRow();
         if (a < 0) {
             JOptionPane.showMessageDialog(null,
@@ -190,6 +187,13 @@ public class frmListaEmpleado extends javax.swing.JInternalFrame {
             int confirmar = JOptionPane.showConfirmDialog(null,
                     "Esta seguro que desea Eliminar el registro? ");
             if (JOptionPane.OK_OPTION == confirmar) {
+                String sql = "delete from empleado where idEmpleado=" + tablaEmpleados.getValueAt(a, 0);
+                try {
+                    PreparedStatement us = con.conectar().prepareStatement(sql);
+                    us.executeUpdate();
+                } catch (SQLException ex) {
+                    Logger.getLogger(frmListaEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 modelTabla.removeRow(a);
                 JOptionPane.showMessageDialog(null,
                         "Registro Eliminado");
@@ -203,9 +207,10 @@ public class frmListaEmpleado extends javax.swing.JInternalFrame {
         int y = (admon.getEscritorio().getHeight() / 2) - a.getHeight() / 2;
         int x = (admon.getEscritorio().getWidth() / 2) - a.getWidth() / 2;
         if (empleado == false) {
-            admon.getEscritorio().add(a);
+            this.getDesktopPane().add(a);
+            this.toFront();
+            a.setVisible(true);
             a.setLocation(x, y);
-            a.show();
             empleado = true;
         } else {
             getToolkit().beep();

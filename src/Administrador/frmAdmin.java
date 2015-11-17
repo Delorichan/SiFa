@@ -254,7 +254,7 @@ public class frmAdmin extends javax.swing.JFrame {
         int y = (escritorio.getHeight()/2)-a.getHeight()/2;
         int x = (escritorio.getWidth()/2)-a.getWidth()/2;
         if(listaEmpleado==false){
-            escritorio.add(a);
+            this.escritorio.add(a);
             a.setLocation(x, y);
             a.show();
             
@@ -366,7 +366,7 @@ public class frmAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane escritorio;
+    public javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu menuAdministracion;
