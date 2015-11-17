@@ -74,14 +74,14 @@ public class frmAdmin extends javax.swing.JFrame {
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 517, Short.MAX_VALUE)
+            .addGap(0, 525, Short.MAX_VALUE)
         );
 
         menuAdministracion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Home.png"))); // NOI18N
         menuAdministracion.setText("Administración");
 
         opcionEmpleado.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
-        opcionEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1443999664_unknown.png"))); // NOI18N
+        opcionEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/People.png"))); // NOI18N
         opcionEmpleado.setText("Empleado");
         opcionEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,7 +91,7 @@ public class frmAdmin extends javax.swing.JFrame {
         menuAdministracion.add(opcionEmpleado);
 
         opcionCliente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
-        opcionCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1443999695_matureman1.png"))); // NOI18N
+        opcionCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Boss.png"))); // NOI18N
         opcionCliente.setText("Cliente");
         opcionCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +101,7 @@ public class frmAdmin extends javax.swing.JFrame {
         menuAdministracion.add(opcionCliente);
 
         opcionProveedor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
-        opcionProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1443999723_malecostume.png"))); // NOI18N
+        opcionProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/User group.png"))); // NOI18N
         opcionProveedor.setText("Proveedor");
         opcionProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,11 +143,11 @@ public class frmAdmin extends javax.swing.JFrame {
 
         menuPrincipal.add(menuAdministracion);
 
-        menuProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1443999965_box.png"))); // NOI18N
+        menuProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Delivery.png"))); // NOI18N
         menuProductos.setText("Productos");
 
         opcionControlProductos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
-        opcionControlProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1444000091_bill.png"))); // NOI18N
+        opcionControlProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/List.png"))); // NOI18N
         opcionControlProductos.setText("Control Productos");
         opcionControlProductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,7 +157,7 @@ public class frmAdmin extends javax.swing.JFrame {
         menuProductos.add(opcionControlProductos);
 
         opcionCategorias.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
-        opcionCategorias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1444000134_categories.png"))); // NOI18N
+        opcionCategorias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Table.png"))); // NOI18N
         opcionCategorias.setText("Categorias");
         opcionCategorias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,7 +180,7 @@ public class frmAdmin extends javax.swing.JFrame {
         menuAyuda.setText("Ayuda");
 
         opcionAyudaRemota.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
-        opcionAyudaRemota.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1443999741_supportmale.png"))); // NOI18N
+        opcionAyudaRemota.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Dial.png"))); // NOI18N
         opcionAyudaRemota.setText("Ayuda Remota");
         opcionAyudaRemota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
